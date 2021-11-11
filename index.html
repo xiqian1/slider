@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider Project</title>
+    <style>
+        *{
+            box-sizing: border-box;
+        }
+        body{
+            background-color: lightblue;
+        }
+        .group1{
+            display: flex;
+            flex-direction: row;
+        }
+        #container{
+            height: 100px;
+            width: 500px;
+            display: flex;
+            justify-content: center;
+            margin-left: 25%;
+            border: 1px solid black; 
+            box-shadow: 5px 0 5px grey;
+        }
+        #pie{
+            display: block;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            justify-content: center;
+            background-image: conic-gradient(
+                red 0 90deg, blue 0 180deg, rgb(0,255,0) 0);
+        }
+        #container2:not(.group1){
+            width: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin-left: 25%;
+            border: 1px solid black;
+            box-shadow: 5px 5px 5px grey;
+        }
+        #box{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            width: 200px;
+            margin: auto;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div id="pie"></div>
+    </div>
+    <div id="container2">
+        <div class="group1">
+        <p>Size:</p>
+        <div id="num1"><p>60</p></div>
+        </div>
+        <input type="range" min="20" max="100" id="size-slider" />
+        <div class="group1">
+        <p>Rotation:</p>
+        <div id="num2"><p>180</p></div>
+        </div>
+        <input type="range" min="0" max="360" id="rotate-slider" />
+        <div class="group1">
+        <p>Shade:</p>
+        <div id="num3"><p>127</p></div>
+        </div>
+        <input type="range" min="0" max="255" value=255 id="gradient-slider" />
+        <p>Red and Blue value:</p>
+        
+        <input type="range" min="0" max="360" value=90 id="red-value" />
+        <input type="range" min="0" max="360" value=90 id="blue-value" />
+    </div>
+    <script src="index.js"></script>
+</body>
+</html>
